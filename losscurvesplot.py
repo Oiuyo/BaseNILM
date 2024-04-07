@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-
+#Create a plot using tensorboard logs
 def plot_loss_curve(train_csv, test_csv):
     train_data = pd.read_csv(train_csv)
     test_data = pd.read_csv(test_csv)

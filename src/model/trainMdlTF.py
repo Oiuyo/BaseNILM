@@ -213,7 +213,7 @@ def trainMdlTF(data, setupDat, setupPar, setupMdl, setupExp):
                                           momentum=setupMdl['mom'], epsilon=setupMdl['eps'])
 
     # SGD
-    elif setupMdl['opt'] == 'SDG':
+    elif setupMdl['opt'] == 'SGD':
         opt = tf.keras.optimizers.legacy.SGD(learning_rate=setupMdl['lr'], momentum=setupMdl['mom'])
 
     # Adam

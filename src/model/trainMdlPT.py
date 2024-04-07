@@ -205,7 +205,7 @@ def trainMdlPT(data, setupDat, setupPar, setupMdl, setupExp):
     # ------------------------------------------
     # SGD
     # ------------------------------------------
-    elif setupMdl['opt'] == 'SDG':
+    elif setupMdl['opt'] == 'SGD':
         opt = torch.optim.SGD(mdl.parameters(), lr=setupMdl['lr'], momentum=setupMdl['mom'])
 
     # ------------------------------------------
