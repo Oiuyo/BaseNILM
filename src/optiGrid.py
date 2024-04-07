@@ -48,7 +48,7 @@ def optiGrid(setupExp, setupDat, setupPar, setupMdl, setupPath):
     setupExp['nameInit'] = setupExp['name']
     setupPar['optPara1'] = [1e-5, 5e-5, 1e-4, 5e-4, 1e-3]
     setupPar['optPara2'] = ['Adam', 'RMSprop', 'SGD']
-    setupPar['optACC'] = 5                                                                                              # 0) ACC, 1) F1, 2) R2, 3) TECA, 4) RMSE, 5) MAE, 6) Max, 7) Pred 8) Grt 9) All
+    setupPar['optACC'] = 3                                                                                              # 0) ACC, 1) F1, 2) R2, 3) TECA, 4) RMSE, 5) MAE, 6) Max, 7) Pred 8) Grt 9) All
 
     ###################################################################################################################
     # Calculation
@@ -64,10 +64,6 @@ def optiGrid(setupExp, setupDat, setupPar, setupMdl, setupPath):
             # ==============================================================================
             # Select Parameter
             # ==============================================================================
-            # setupPar['window'] = setupPar['optPara1'][i]
-            # setupPar['overlap'] = setupPar['window'] - 1
-            # setupPar['yFocus'] = setupPar['window']/2
-            # setupDat['fs'] = setupPar['optPara2'][ii]
             setupMdl['lr'] = setupPar['optPara1'][i]
             setupMdl['opt'] = setupPar['optPara2'][ii]
 

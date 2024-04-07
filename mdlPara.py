@@ -51,7 +51,7 @@ def mdlPara(setupMdl):
     setupMdl['loss'] = 'mae'                                                                                            # loss function 1) mae, 2) mse, 3) BinaryCrossentropy, 4) KLDivergence, 5) accuracy
     setupMdl['metric'] = 'TECA'                                                                                         # loss metric 1) mae, 2) mse, 3) BinaryCrossentropy, 4) KLDivergence, 5) accuracy, 6) TECA
     setupMdl['opt'] = 'Adam'                                                                                            # solver 1) Adam, 2) RMSprop, 3) SGD
-    setupMdl['lr'] = 1e-3                                                                                               # learning rate
+    setupMdl['lr'] = 1e-4                                                                                               # learning rate
     setupMdl['beta1'] = 0.9                                                                                             # first moment decay
     setupMdl['beta2'] = 0.999                                                                                           # second moment decay
     setupMdl['eps'] = 1e-08                                                                                             # small constant for stability

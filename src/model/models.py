@@ -182,6 +182,30 @@ def tfMdlBDLSTM(X_train, outputdim, activation):
 
     return mdl
 
+# ------------------------------------------
+# Bi-Directional LSTM (New)
+# ------------------------------------------
+def tfMdlBD(X_train, outputdim, activation):
+    mdl = tf.keras.models.Sequential()
+
+    mdl.add(tf.keras.layers.Conv1D(filters=128, kernel_size=7, activation='relu', padding="same", strides=1,
+                           input_shape=X_train.shape[1:]))
+    mdl.add(tf.keras.layers.BatchNormalization())
+    mdl.add(tf.keras.layers.ReLU())
+    mdl.add(tf.keras.layers.MaxPooling1D(pool_size=2, strides=2, padding='valid'))
+
+    mdl.add(tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(128,activation='tanh', return_sequences=True), merge_mode="concat"))
+    mdl.add(tf.keras.layers.Flatten())
+
+    mdl.add(tf.keras.layers.Dense(128, activation='relu'))
+    mdl.add(tf.keras.layers.BatchNormalization())
+    mdl.add(tf.keras.layers.ReLU())
+    mdl.add(tf.keras.layers.Dropout(rate=0.5))
+    mdl.add(tf.keras.layers.Dense(outputdim, activation='relu'))
+    mdl.set_weights(mdl.get_weights())
+
+    return mdl
+
 
 #######################################################################################################################
 # PT Models

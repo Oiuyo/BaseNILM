@@ -52,13 +52,13 @@ setupPath = initPath('BaseNILM')
 # ------------------------------------------
 # Names
 # ------------------------------------------
-setupExp['name'] = 'Default_BDLSTM5'                                                                                            # Name of the simulation
+setupExp['name'] = 'BD'                                                                                            # Name of the simulation
 setupExp['author'] = 'Pascal Schirmer'                                                                                  # Name of the author
 
 # ------------------------------------------
 # General
 # ------------------------------------------
-setupExp['sim'] = 2                                                                                                     # 0) simulation, 1) optimisation hyperparameters, 2) optimising grid
+setupExp['sim'] = 2                                                                                                    # 0) simulation, 1) optimisation hyperparameters, 2) optimising grid
 setupExp['gpu'] = 0                                                                                                     # 0) cpu, 1) gpu
 setupExp['warn'] = 3                                                                                                    # 0) all msg are logged, 1) INFO not logged, 2) INFO and WARN not logged, 3) disabled
 
@@ -141,7 +141,7 @@ setupDat['ghost'] = 0                                                           
 # ------------------------------------------
 setupPar['method'] = 0                                                                                                  # 0) regression, 1) classification
 setupPar['solver'] = 'TF'                                                                                               # TF: Tensorflow, PT: PyTorch, SK: sklearn, PM: Pattern Matching, SS: Source Separation and CU: Custom (placeholder for own ideas)
-setupPar['model'] = 'BDLSTM'                                                                                               # possible classifier: 1) ML: RF, CNN, LSTM \ 2) PM: DTW, MVM \ 3) SS: NMF, SCA
+setupPar['model'] = 'BD'                                                                                               # possible classifier: 1) ML: RF, CNN, LSTM \ 2) PM: DTW, MVM \ 3) SS: NMF, SCA
 setupPar['modelInpDim'] = 3                                                                                             # model input dimension 3D or 4D (e.g. for CNN2D)
 
 # ------------------------------------------

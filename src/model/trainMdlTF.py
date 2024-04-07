@@ -17,7 +17,7 @@
 # Internal
 # ==============================================================================
 from src.general.helpFnc import reshapeMdlData
-from src.model.models import tfMdlCNN, tfMdlDNN, tfMdlLSTM, tfMdlCNN2, tfMdlBDLSTM
+from src.model.models import tfMdlCNN, tfMdlDNN, tfMdlLSTM, tfMdlCNN2, tfMdlBDLSTM, tfMdlBD
 
 # ==============================================================================
 # External
@@ -149,10 +149,16 @@ def trainMdlTF(data, setupDat, setupPar, setupMdl, setupExp):
         mdl = tfMdlLSTM(data['T']['X'], out, activation)
 
     # ------------------------------------------
-    # BDLSTM
+    # BDLSTM (Nuno)
     # ------------------------------------------
     elif setupPar['model'] == "BDLSTM":
         mdl = tfMdlBDLSTM(data['T']['X'], out, activation)
+
+    # ------------------------------------------
+    # BDLSTM (New)
+    # ------------------------------------------
+    elif setupPar['model'] == "BD":
+        mdl = tfMdlBD(data['T']['X'], out, activation)
 
 
     # ------------------------------------------
